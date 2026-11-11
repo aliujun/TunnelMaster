@@ -1,0 +1,10 @@
+node_modules/
+out/
+dist/
+*.log
+*.txt
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.local

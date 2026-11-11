@@ -1,0 +1,54 @@
+{
+  "name": "tunnelmaster",
+  "version": "0.1.0",
+  "description": "基于 cloudflared 的 Windows 隧道图形化管理工具",
+  "main": "out/main/index.js",
+  "author": "aliujun",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliujun/TunnelMaster.git"
+  },
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "dist": "electron-vite build && electron-builder"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "pinia": "^2.2.6",
+    "vite": "^5.4.11",
+    "vue": "^3.5.13"
+  },
+  "build": {
+    "appId": "com.aliujun.tunnelmaster",
+    "productName": "隧道管家",
+    "publish": null,
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "隧道管家",
+      "artifactName": "TunnelMaster-${version}.${ext}",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "language": "2052"
+    },
+    "files": [
+      "out/**/*",
+      "resources/**/*"
+    ]
+  }
+}
